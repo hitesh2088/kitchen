@@ -4,6 +4,7 @@ import	Eachrow from './eachrow.js';
 class Kitchenlist extends Component {
 	render(){
 		console.log(this.props);
+		let that = this;
 		return (
 				<table border="1" width="100%" >
 					<tr>
@@ -13,9 +14,9 @@ class Kitchenlist extends Component {
 <th>Predicted</th>
 <th>Status</th>
 </tr>
-				{this.props.each.forEach(function(ele,this.props){
-						return <Eachrow data={ele} />
-						}, this.props)
+				{this.props.each.map(function(ele){
+						return <Eachrow data={ele} click={that.props.click} />
+						})
 					}
 				</table>
 			);
